@@ -60,54 +60,78 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+
+
+
+
+
+
+  // FDNGBVIDFNBM
+
+
 // Updating number 
+// Get the div elements
+const numberDisplays = [
+  document.getElementById('numberDisplay1'),
+  document.getElementById('numberDisplay2'),
+  document.getElementById('numberDisplay3'),
+  document.getElementById('numberDisplay4')
+];
 
+// Initial values for the numbers
+const targetNumbers = [39, 20000, 60, 5000];
 
-          // Get the div elements
-          const numberDisplays = [
-            document.getElementById('numberDisplay1'),
-            document.getElementById('numberDisplay2'),
-            document.getElementById('numberDisplay3'),
-            document.getElementById('numberDisplay4')
-        ];
+// Function to update each number display
+function updateNumberDisplays() {
+  for (let i = 0; i < numberDisplays.length; i++) {
+      const numberDisplay = numberDisplays[i];
+      const targetNumber = targetNumbers[i];
 
-        // Initial values for the numbers
-        const targetNumbers = [39, 20000, 60, 5000];
+      // Get the current number
+      let currentNumber = parseInt(numberDisplay.textContent);
 
-        // Function to update each number display
-        function updateNumberDisplays() {
-            for (let i = 0; i < numberDisplays.length; i++) {
-                const numberDisplay = numberDisplays[i];
-                const targetNumber = targetNumbers[i];
+      // Calculate the increment per step
+      const increment = targetNumber / 100; // targetNumber in 100 steps
 
-                // Get the current number
-                let currentNumber = parseInt(numberDisplay.textContent);
+      // Update the display with the incremented number
+      // numberDisplay.textContent = Math.min(targetNumber, Math.round(currentNumber + increment));
+      numberDisplay.textContent = Math.min(targetNumber, Math.round(currentNumber + increment)) + "+";
+  }
 
-                // Calculate the increment per step
-                const increment = targetNumber / 100; // targetNumber in 100 steps
+  // If any of the current numbers is less than its target, schedule the next update
+  let continueUpdating = false;
+  for (let i = 0; i < numberDisplays.length; i++) {
+      if (parseInt(numberDisplays[i].textContent) < targetNumbers[i]) {
+          continueUpdating = true;
+          break;
+      }
+  }
 
-                // Update the display with the incremented number
-                numberDisplay.textContent = Math.min(targetNumber, Math.round(currentNumber + increment));
-            }
+  if (continueUpdating) {
+      setTimeout(updateNumberDisplays, 15); // Update every 15 milliseconds
+  } else {
+      // Append "+" symbol to each number after completion
+      numberDisplays.forEach(display => {
+          display.textContent += "";
+      });
+  }
+}
 
-            // If any of the current numbers is less than its target, schedule the next update
-            let continueUpdating = false;
-            for (let i = 0; i < numberDisplays.length; i++) {
-                if (parseInt(numberDisplays[i].textContent) < targetNumbers[i]) {
-                    continueUpdating = true;
-                    break;
-                }
-            }
+// Function to start counting when the container is intersecting with the viewport
+function startCounting(entries, observer) {
+  if (entries[0].isIntersecting) {
+      // Call the function to start updating the number displays
+      updateNumberDisplays();
+      // Stop observing once started counting
+      observer.unobserve(entries[0].target);
+  }
+}
 
-            if (continueUpdating) {
-                setTimeout(updateNumberDisplays, 20); // Update every 20 milliseconds
-            } else {
-                // Append "+" symbol to each number after completion
-                numberDisplays.forEach(display => {
-                    display.textContent += "+";
-                });
-            }
-        }
+// Create an Intersection Observer instance
+const observer = new IntersectionObserver(startCounting, { threshold: 0.5 });
 
-        // Call the function to start updating the number displays
-        updateNumberDisplays();
+// Get the container element
+const container = document.querySelector('.container');
+
+// Observe the container
+observer.observe(container);
