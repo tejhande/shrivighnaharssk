@@ -1,0 +1,272 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+/* Header css */
+
+header{
+    display: flex;
+    background-color: red;
+    height: 32px;
+    align-items: center;
+    
+}
+
+.top1{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left:  20px;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    
+}
+
+.material-symbols-outlined {
+    font-size: 16px;
+    margin-right: 5px;
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 300,
+    'GRAD' 0,
+    'opsz' 24
+}
+span.material-symbols-outlined{
+    font-size: 16px;
+}
+
+/* Navbar css */
+nav {
+    display: flex;
+    width: calc(100% - 40px); /* Subtracting the left and right margins of .container class (10px)*/
+    height: 130px;
+    align-items: center;  
+}
+
+.nav {
+    margin-left: 99px;  
+    margin-right: 1px;
+    display: flex;
+    justify-content: space-around;
+    width: auto;
+}
+
+.nav li a {
+    margin-left: 8px;  
+    margin-right: 8px;
+    color: black;
+    display: flex;
+    /* margin-left: 15px; */
+    padding: 4px 5px;
+    font: normal bold 17px / 21px "Ek Mukta", Helvetica, Arial, Verdana, sans-serif;
+    height: 21px;
+    width: auto;
+}
+
+.nav li a:hover {
+    border: 1.5px solid red;
+    padding: 5px 6px;
+    color: red;
+}
+
+.nav li a.active {
+    border: 2px solid red;
+    color: white;
+    background-color: red;
+}
+
+/* .menu1 {
+    color: #111111;
+    background-color: red;
+} */
+
+
+/* Carousel css */
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .carousel-inner {
+    display: flex;
+  }
+  
+  .carousel-item {
+    flex: 0 0 auto;
+    transition: transform 0.5s ease;
+  }
+  
+  .carousel-item img {
+    max-width: 100%;
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1;
+  }
+  
+  .carousel-control-prev {
+    left: 10px;
+  }
+  
+  .carousel-control-next {
+    right: 10px;
+  }
+  
+
+/* About css  */
+
+.about{
+    display: flex;
+    margin-left: 175px;
+    margin-right: 175px;
+    margin-top: 80px;
+    margin-bottom: 30px;
+}
+
+.about-text{
+    justify-content: space-between;
+    margin-right: 35px;
+}
+
+.about-image{
+    width: 530px;
+    height: 284px;
+    object-fit: cover;
+    
+}
+
+p {
+    margin-bottom: 10px;
+    color: #72777d;
+    font: normal 500 18px / 26px "Ek Mukta", Helvetica, Arial, Verdana, sans-serif;
+}
+
+.more{
+    font: normal 500 14px / 26px "Ek Mukta", Helvetica, Arial, Verdana, sans-serif;
+    margin-top: 32px;
+    text-align: center;
+    background-color: #e11c22;
+    height: 30px;
+    width: 88px;
+    color: white;
+}
+
+.more:hover{
+    background-color: #6ca9f2;
+    border: none;
+}
+
+
+
+/* container css  */
+
+.container {
+    height: 230px;
+    background-color: rgb(237, 42, 48);
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center; /* Evenly space the boxes */
+    align-items: center; /* Center items vertically */
+}
+
+.numberDisplay,
+.title {
+    text-align: center; /* Center-align text */
+    color: #fff;
+}
+
+.numberDisplay {
+    font-size: 65px;
+    font-weight: 500;
+    margin-bottom: 5px; /* Reduce space between number and title */
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.title {
+    font-size: 25px;
+    margin-top: 5px; /* Adjust the space above the title */
+}
+
+
+
+/* Container 2 css  */
+
+
+.container_2{
+    height: 200px;
+    display: flex;
+    align-items: center;
+    background-color: black;
+    color: white;
+}
+
+.container_2 p {
+    margin-left: 175px;
+    margin-right: 175px;
+    font-size: 16px;
+    width: 61%;
+    color: White;
+    font-weight: normal;
+}
+
+#lastPara{
+    font-size: 14px;
+    font-family: "Ek Mukta", Helvetica, Arial, Verdana, sans-serif;;
+}
+
+/* Container 1 css  */
+
+.container1{
+    height: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.box{
+    width: 365px;
+    height: 280px;
+    border: 2px solid #ffffff;
+    box-sizing: border-box;
+    padding: 30px;
+    float: left;
+    text-align: center;
+    transition: all .3s ease-in-out;
+}
+
+.icons{
+    transform: scale(3);
+    color: red;
+    padding-bottom: 15px;
+}
+
+.iconTitle{
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 30px;
+}
+.iconText{
+    color: #72777d;
+
+}
+
+.icons .material-symbols-outlined{
+  font-variation-settings:
+  'FILL' 400,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+
+}
