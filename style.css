@@ -270,3 +270,75 @@ p {
   'opsz' 24
 
 }
+
+
+
+
+
+
+
+
+
+
+
+/* For screens smaller than 768px */
+@media (max-width: 767px) {
+    .about {
+        flex-direction: column;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .about-image {
+        width: 100%; /* Adjust the width */
+        height: auto; /* Auto height to maintain aspect ratio */
+    }
+
+    .about-text {
+        margin-right: 0;
+    }
+
+    .container_2 p {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
+/* For screens between 768px and 992px */
+@media (min-width: 768px) and (max-width: 991px) {
+    .about {
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+
+    .container_2 p {
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+}
+
+/* For screens between 992px and 1200px */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .about {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .container_2 p {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
+
+/* For screens larger than 1200px */
+@media (min-width: 1200px) {
+    .about {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    .container_2 p {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}
